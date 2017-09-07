@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.jhc.startdemo.aidl.AIDLActivity">
+
+    <Button
+        android:id="@+id/aidl_bind_aidl_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bind aidl service"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/aidl_bind_message_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bind message service"
+        android:textAllCaps="false"/>
+</com.zhy.autolayout.AutoLinearLayout>
