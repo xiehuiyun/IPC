@@ -72,6 +72,7 @@ public class AIDLActivity extends BaseActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
+                    //接收service发送的消息
                     Log.i("MessageService", "receive msg from service :" + msg.getData().getString("reply"));
                     break;
             }
@@ -81,11 +82,13 @@ public class AIDLActivity extends BaseActivity {
     private ServiceConnection connection2 = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            //发送消息给服务器
             Messenger messenger = new Messenger(iBinder);
             Message message = Message.obtain(null, 0);
             Bundle bundle = new Bundle();
             bundle.putString("msg", "this is client.");
             message.setData(bundle);
+            //并且将mService传递过去。使得MessageService给AIDLActivity发送消息时有Messaenger,这样service发送的消息可以在AIDLActivity中的MessagerHandler中接受消息
             message.replyTo = mService;
             try {
                 messenger.send(message);
