@@ -60,9 +60,10 @@ public class ContentProviderActivity extends BaseActivity {
         Cursor userCursor = getContentResolver().query(userUri, new String[]{"_id", "name", "sex"}, "_id = ?", new String[]{"1"}, null);
         builder.replace(0, builder.length(), "显示结果：");
         while (userCursor.moveToNext()) {
+            //注意获取数据时的下表按顺序从0开始
             int id = userCursor.getInt(0);
-            String name = userCursor.getString(0);
-            int sex = userCursor.getInt(1);
+            String name = userCursor.getString(1);
+            int sex = userCursor.getInt(2);
             User user = new User(id, name, sex);
             Log.i("MyContentProvider", user.toString());
             builder.append("\n" + user.toString());
@@ -76,8 +77,9 @@ public class ContentProviderActivity extends BaseActivity {
         builder.replace(0, builder.length(), "显示结果：");
         Cursor bookCursor = getContentResolver().query(bookUri, new String[]{"_id", "name"}, null, null, null);
         while (bookCursor.moveToNext()) {
+            //注意获取数据时的下表按顺序从0开始
             int id = bookCursor.getInt(0);
-            String name = bookCursor.getString(0);
+            String name = bookCursor.getString(1);
             Book book = new Book(id, name);
             Log.i("MyContentProvider", book.toString());
             builder.append("\n" + book.toString());
