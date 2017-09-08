@@ -12,12 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="bind aidl service"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/aidl_bind_message_service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="bind message service"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/move_to_contentprovider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="move to contentProvider"
+        android:textAllCaps="false" />
 </com.zhy.autolayout.AutoLinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.jhc.startdemo.contentProvider.ContentProviderActivity">
+
+    <Button
+        android:id="@+id/inert_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="往book里面插入数据"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/query_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询book表"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/query_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询User表"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/show_result"
+        android:padding="10dp"
+        android:text="结果展示："
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

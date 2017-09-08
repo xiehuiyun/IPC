@@ -17,6 +17,7 @@ import java.util.List;
 import butterknife.OnClick;
 import cn.jhc.startdemo.R;
 import cn.jhc.startdemo.common.base.BaseActivity;
+import cn.jhc.startdemo.contentProvider.ContentProviderActivity;
 import cn.jhc.startdemo.message.MessageService;
 
 public class AIDLActivity extends BaseActivity {
@@ -116,7 +117,7 @@ public class AIDLActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.aidl_bind_aidl_service, R.id.aidl_bind_message_service})
+    @OnClick({R.id.aidl_bind_aidl_service, R.id.aidl_bind_message_service, R.id.move_to_contentprovider})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.aidl_bind_aidl_service:
@@ -126,6 +127,10 @@ public class AIDLActivity extends BaseActivity {
             case R.id.aidl_bind_message_service:
                 Intent intent1 = new Intent(this, MessageService.class);
                 bindService(intent1, connection2, BIND_AUTO_CREATE);
+                break;
+            case R.id.move_to_contentprovider:
+                Intent intent2 = new Intent(this, ContentProviderActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
